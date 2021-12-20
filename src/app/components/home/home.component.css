@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+  --green: #27ae60;
+  --black: #ffffff;
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+
+}
+
+*::selection {
+  background: var(--green);
+  color: #fff;
+}
+
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+  scroll-padding-top: 6.5rem;
+  scroll-behavior: smooth;
+}
+/* Banner */
+.banner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.banner-container .banner {
+  flex: 1 1 40rem;
+  height: 22rem;
+  overflow: hidden;
+  position: relative;
+}
+.banner-container .banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.banner-container .banner .content {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translateY(-50%);
+}
+
+.banner-container .banner .content h4 {
+  font-size: 1;
+  color: var(--black);
+}
+
+.banner-container .banner .content p {
+  font-size: 2 rem;
+  color: black;
+}
+
+.btn:hover {
+  background: var(--black);
+}
+
+.banner-container .banner:hover img {
+  transform: scale(1.2) rotate(-5deg);
+}
+/* Footer */
+.footer {
+  background: black;
+  color: white;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .box-container .box h4 {
+  font-size: 1.5rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box h4 i {
+  color: var(--b);
+}
+
+.footer .box-container .box .links {
+  display: block;
+  font-size: 1.01em;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box .links i {
+  color: brown;
+  padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i {
+  padding-right: 2rem;
+}
+
+
+.footer .box-container .box p {
+  line-height: 1.8;
+  font-size: 1.3rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box .share a {
+  height: 2rem;
+  width: 2rem;
+  line-height: 2rem;
+  border-radius: .3rem;
+  font-size: 1rem;
+  color: var(--black);
+  margin-right: .1rem;
+  background: brown;
+  text-align: center;
+}
+
+.footer .box-container .box .share a:hover {
+  background: brown;
+  color: #fff;
+}
+
+
+.footer .box-container .box .payment-img {
+  margin-top: 2rem;
+  height: 3rem;
+  display: block;
+}
+
+.footer .credit {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  font-size: 1.5rem;
+  color: var(--black);
+  border-top: var(--border);
+}
+
+.footer .credit span {
+  color: brown;
+}

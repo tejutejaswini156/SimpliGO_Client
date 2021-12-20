@@ -1,0 +1,17 @@
+.card{
+    border: none;
+    width: 500px;
+    padding: 40px;
+    left:50%;
+    top: 50%;
+    margin-top:50px;
+    transform: translate(-50%,-50%);
+    background:linear-gradient(white,grey);
+    position: absolute;
+}
+.img{
+    height: 700px;
+    background: transparent;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}

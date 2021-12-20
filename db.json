@@ -1,0 +1,141 @@
+{
+  "signupUser": [
+    {
+      "fname": "Nikhil",
+      "lname": "Sai",
+      "email": "nikhil@gmail.com",
+      "phno": "123456",
+      "location": "Kavali",
+      "password": "1234"
+    },
+    {
+      "fname": "Dhana",
+      "lname": "sri",
+      "email": "dhana@gmail.com",
+      "phno": "8987654332",
+      "location": "Vijayawada",
+      "password": "123456"
+    },
+    {
+      "fname": "",
+      "lname": "",
+      "email": "",
+      "phno": "",
+      "location": "",
+      "password": ""
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Roadster Men's Shirt",
+      "price": 974,
+      "description": "Men Blue Printed Casual Shirt",
+      "quantity":1,
+      "category": "men's clothing",
+      "image": "assets/menshirt.webp",
+      "brand":"",
+      "rating":""
+    },
+    {
+      "id": 2,
+      "title": " Silver Classic Solitaire Ring",
+      "price": 2299,
+      "description": "Made with Pure 925 Silver",
+      "quantity":1,
+      "category": "jewelery",
+      "image": "assets/jewel1.jpeg",
+      "brand":"GIVA",
+      "rating":""
+
+    },
+    {
+      "id": 3,
+      "title": "Tokyo Talkies Women Tshirt",
+      "price": 639,
+      "description": "Women Black Solid Sweater",
+      "quantity":1,
+      "category": "women's clothing",
+      "image": "assets/women.webp",
+      "brand":"HM",
+      "rating":""
+    },
+    {
+      "id": 4,
+      "title": "Apple iPhone 11 (64GB) ",
+      "price": 47900,
+      "description": "6.1-inch (15.4 cm diagonal) ",
+      "quantity":1,
+      "category": "electronics",
+      "image": "assets/apple.jpg",
+      "brand":"",
+      "rating":""
+    },
+    {
+      "id": 5,
+      "title": "Xiaomi Mi TV 4A  ",
+      "price": 27900,
+      "description": "43 Inch Full HD LED Android Smart TV ",
+      "quantity":1,
+      "category": "electronics",
+      "image": "assets/mitv.jpeg",
+      "brand":"",
+      "rating":""
+    },
+    {
+      "id": 6,
+      "title": "Teamspirit Women Tee Top",
+      "price": 339,
+      "description": "Solid Red Tshirt ",
+      "quantity":1,
+      "category": "women's clothing",
+      "image": "assets/womentee.jpg",
+      "brand":"Forever21",
+      "rating":""
+    },
+    {
+      "id": 7,
+      "title": " Silver Zircon Embrace Ring",
+      "price": 3999,
+      "description": "Made with Pure 925g Silver",
+      "quantity":1,
+      "category": "jewelery",
+      "image": "assets/jewel3.jpg",
+      "brand":"",
+      "rating":""
+    },
+    {
+      "id": 8,
+      "title": "OnePlus Phone Nord CE",
+      "price": 24999,
+      "description": "8 GB RAM + 128 GB Storage",
+      "quantity":1,
+      "category": "electronics",
+      "image": "assets/oneplus.jpeg",
+      "brand":"",
+      "rating":""
+    },
+    {
+      "id": 9,
+      "title": "Gap Women Sweatshirt",
+      "price": 1639,
+      "description": "Women Black Solid Sweater",
+      "quantity":1,
+      "category": "women's clothing",
+      "image": "assets/women2.jpg",
+      "brand":"Forever21",
+      "rating":""
+    },
+    {
+      "id": 10,
+      "title": "Samsung 49-Inch Monitor",
+      "price": 10000,
+      "description": "CURVED GAMING MONITOR with dual 27 inch screen ",
+      "quantity":1,
+      "category": "electronics",
+      "image": "assets/gameing.jpg",
+      "brand":"",
+      "rating":""
+    }
+  ]
+}

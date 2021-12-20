@@ -1,0 +1,33 @@
+<!-- Navbar Page -->
+<nav class="navbar navbar-fixed navbar-right" style="color: black;background: rgb(0, 0, 0);padding-left: 10px;">
+  <div class="container" style="color: black;background: rgb(0, 0, 0);max-width: 100%;">
+    <ul class="nav">
+      <img src="../assets/logo.png" style="width:120px;height: 60px;">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/home"
+          style="color: white;padding-top: 15px;">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/about"
+          style="color: white;padding-top: 15px;">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/electronics"
+          style="color: white;padding-top: 15px;">Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/contact"
+          style="color: white;padding-top: 15px;">Contact</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right  nav-pills">
+      <li class="nav-item" *ngIf="!temp">
+        <button routerLink="/login" class="btn btn-danger mx-2 " style="color: white;">Login</button>
+      </li>
+      <li class="nav-item form-inline" *ngIf="temp">
+        <h4 style="color: white;padding-top: 15px;padding-left: 5px;font-size: larger;">{{name}}</h4>
+        <button class="btn btn-danger mx-2 " (click)="logout()" style="color: white;">Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>

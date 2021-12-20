@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpliGO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+    <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+    </head>
+    <body style="background-color:rgb(230, 230, 230) ;">
+    <app-nav-bar></app-nav-bar>
+     <!--Carousel-->
+    <ngb-carousel>
+        <ng-template ngbSlide>
+        <div class="item">
+            <div class="picsum-img-wrapper">
+            <img src="../../assets/SLID1.jpg" height="300" width="100%">
+            </div>
+        </div>
+        </ng-template>
+        <ng-template ngbSlide>
+        <div class="item">
+            <div class="picsum-img-wrapper">
+            <img src="../../assets/SILDE2.jpg" height="300" width="100%">
+            </div>
+
+        </div>
+        </ng-template>
+        <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="../../assets/SLIDE3.jpg" height="300" width="100%">
+        </div>
+        </ng-template>
+        <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="../../assets/SLID4.jpeg" height="300" width="100%">
+        </div>
+        </ng-template>
+    </ngb-carousel>
+    <br>
+    <!-- Slider -->
+    <div class="container" style="background-color: white;max-width: 100%;">
+        <h4><b>Upto 65% Sale on Electronics</b></h4><br>
+        <ng-image-slider #nav [images]="imageObject" [infinite]="false" [autoSlide]="1"
+        [imageSize]="{width: '19.1%', height: 250}" slideImage="1"></ng-image-slider>
+    </div>
+    <!--Banner-->
+    <section class="banner-container" style="padding-left:17px;padding-right:19px">
+        <div class="banner">
+        <img src="../../assets/banner3.png" alt="">
+        <div class="content">
+            <h3 style="color: white;"><b>special offer</b></h3>
+            <h4 style="color: white;"><b>upto 45% off</b></h4><br>
+            <a href="#" class="btn" style="background-color:brown;color: white;">check out</a>
+        </div>
+        </div>
+        <div class="banner">
+        <img src="../../assets/sale2.jpeg" alt="">
+        <div class="content">
+            <h3><b>limited offer</b></h3>
+            <h4><b>upto 50% off</b></h4><br>
+            <a href="#" class="btn" style="background-color: royalblue;color: white;">check out</a>
+        </div>
+        </div>
+    </section>
+    <br>
+    <!--Footer-->
+    <section class="footer" style="padding-left:150px;font-size: 20px;height:10%;padding-top: 20px;">
+        <div class="box-container">
+        <div class="box">
+            <h4><b>Shopify</b><i class="fas fa-shopping-basket"></i> </h4>
+            <p>Top brands for Phones and Electronics. Latest trends in Fashion. Free Shipping available* Great Offers. Low Prices. Huge Selection. Top Brands.</p>
+            <div class="share" style="padding-left: 5%;">
+            <a href="#" class="fab fa-facebook-f"></a>&nbsp;
+            <a href="#" class="fab fa-twitter"></a>&nbsp;
+            <a href="#" class="fab fa-instagram"></a>&nbsp;
+            <a href="#" class="fab fa-linkedin"></a>&nbsp;
+            </div>
+        </div>
+        <div class="box">
+            <h4><b>contact info</b></h4>
+            <b>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> +7997654234</a>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> 9346036112 </a>
+            <a href="#" class="links"> <i class="fas fa-envelope"></i>Shopify@gmail.com</a>
+            <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i>Andhra Pradesh ,India </a>
+            </b>
+        </div>
+        <div class="box">
+            <h4><b>quick links</b></h4>
+            <b>
+            <a href="#home" class="links"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#category" class="links"> <i class="fas fa-arrow-right"></i> categories </a>
+            <a href="#product" class="links"> <i class="fas fa-arrow-right"></i> products </a>
+            <a href="#cart" class="links"> <i class="fas fa-arrow-right"></i> Cart </a>
+            </b>
+        </div>
+        </div>
+        <div class="credit"> Copyrights &copy; <span>Tejaswini Malaga</span> </div>
+    </section>
+    </body> 
+</html>

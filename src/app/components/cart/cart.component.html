@@ -1,0 +1,208 @@
+<app-nav-bar></app-nav-bar>   
+<ng-container *ngIf="products.length !=0" >
+    <section class="section-content padding-y bg">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8">
+                    <article class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Review cart</h4>
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Product </th>
+                                        <th>Title</th>
+                                        <th>Price</th>
+                                        <th> Quantity</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of products; let i = index">
+                                            <td><img style="width: 100px;" src="{{item.img}}" alt=""></td>
+                                            <td>{{item.title}}</td>
+                                            <td style="width: 18%;">{{item.price}}</td>
+                                            <td style="width:20%;">
+                                                <div  class="quantity buttons_added">
+                                                    <input type="button" value="-" class="minus"(click)=qdecrease(item);>&nbsp;{{item.quantity}}&nbsp;<input type="button" value="+" class="plus"(click)="qincrease(item)">
+                                                </div>
+                                            </td>
+                                            <td style="width: 12%;">{{item.price*item.quantity}}</td>
+                                            <td>
+                                                <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"> Delete</i></button>
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8"></td>
+                                        <td><button (click)="emptycart()" class="btn btn-danger" >Empty Cart</button></td> 
+                                        <td><strong>Grand Total :&#8377;{{grandTotal}}</strong></td>
+                                    </tr> 
+                                </tbody>
+                            </table>
+                        </div> 
+                    </article> 
+                    <article class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Delivery info</h4>
+                            <form [formGroup]="checkoutForm">
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <label>
+                                            <h6 class="title">Delivery</h6>
+                                            <p class="text-muted">We will deliver to your address</p>
+                                        </label> 
+                                    </div>
+                                </div>  
+                    
+                                <div class="row">
+                                    <div class="mb-4 col-md-4">
+                                        <label for="exampleInputEmail1">State</label>
+                                        <input formControlName="state"  type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter State" >
+                                        <span class="text-danger" *ngIf="(checkoutForm.controls.state.touched || submitted) && checkoutForm.controls.state.errors?.required">
+                                            State is required
+                                        </span>
+                                    </div>
+                                    <div class="mb-4 col-md-4">
+                                        <label for="exampleInputEmail1">City</label>
+                                        <input formControlName="city"  type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter city" >
+                                        <span class="text-danger" *ngIf="(checkoutForm.controls.city.touched || submitted) && checkoutForm.controls.city.errors?.required">
+                                            City is required
+                                        </span>
+                                    </div>
+                                    <div class="mb-4 col-md-4">
+                                        <label for="exampleInputEmail1">Area</label>
+                                        <input formControlName="area"  type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Area" >
+                                        <span class="text-danger" *ngIf="(checkoutForm.controls.area.touched || submitted) && checkoutForm.controls.area.errors?.required">
+                                            Area is required
+                                        </span>
+                            
+                                    </div>
+                                    <div class="mb-4 col-md-4">
+                                        <label for="exampleInputEmail1">Postal Code</label>
+                                        <input formControlName="pincode"  type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Pincode" >
+                                        <span class="text-danger"
+                                        *ngIf="(checkoutForm.controls.pincode.touched || submitted) && checkoutForm.controls.pincode.errors?.required">
+                                        Postal Code is required
+                                        </span>
+                                    </div>
+                                    <div class="mb-4 col-md-4">
+                                        <label for="exampleInputEmail1">Phone Number</label>
+                                        <input formControlName="phno"  type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phonenumber" >
+                                        <span class="text-danger"
+                                        *ngIf="(checkoutForm.controls.phno.touched || submitted) && checkoutForm.controls.phno.errors?.required">
+                                        Phone Number is required
+                                        </span>
+                                    </div>
+                                </div> <!-- row.// -->	
+                                <button class="btn btn-primary btn-block" style="width:15%;height:15%;margin-left: 40%;" (click)="pay(20);emptycart()"> Checkout  </button>
+
+                            </form>
+                         </div> <!-- card-body.// -->
+                    </article> <!-- card.// -->
+                    <article class="accordion" id="accordion_pay">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <img src="../../../assets/payment-paypal.png" class="float-right" height="24"> 
+                                        <label class="form-check collapsed" data-toggle="collapse" data-target="#pay_paynet">
+                                            Paypal 
+                                        </label>
+                                        <div id="pay_paynet" class="collapse show" data-parent="#accordion_pay">
+                                            <div class="card-body">
+                                                <p class="text-center text-muted">Connect your PayPal account and use it to pay your bills. You'll be redirected to PayPal to add your billing information.</p>
+                                                <p class="text-center">
+                                                <a href="#"><img src="../../../assets/btn-paypal.png" height="32"></a>
+                                                <br><br>
+                                                </p>
+                                            </div> <!-- card body .// -->
+                                        </div> <!-- collapse .// -->
+                                    </header>
+                                </div> <!-- card.// -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <img src="../../../assets/gpay.png" class="float-right" height="30" width=20%> 
+                                        <label class="form-check collapsed" data-toggle="collapse" data-target="#pay_paynet">
+                                            Google Pay 
+                                        </label>
+                                        <div id="pay_paynet" class="collapse show" data-parent="#accordion_pay">
+                                            <div class="card-body">
+                                                <p class="text-center text-muted">Connect your Google Pay account and use it to pay your bills. </p>
+                                                <p class="text-center">
+                                                <a href=""><img src="data:image/jpeg;base64,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" height="42" width="50%"></a>
+                                                <br><br>
+                                                </p>
+                                            </div> <!-- card body .// -->
+                                        </div> <!-- collapse .// -->
+                                    </header>
+                                </div> <!-- card.// -->
+                            </div>
+                        </div>
+                    </article> 
+                    <!-- accordion end.// -->
+          
+                </main> <!-- col.// -->
+                <aside class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h4 class="mb-3">Overview</h4>
+                            <table class="table table-responsive">
+                                <tbody>
+                                    <tr *ngFor="let item of products; let i = index">
+                                        <td><img style="width: 100px;" src="{{item.img}}" alt="" ></td>
+                                        <td>{{item.title}}</td>
+                                        <td>Quantity:{{item.quantity}}</td>
+                                        <td style="width: 12%;">Price:{{item.price*item.quantity}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button routerLink="/electronics" class="btn btn-primary" style="width:35%;height:35px">Shop More</button>&nbsp;&nbsp;
+                            <strong>Grand Total :&#8377; {{grandTotal}}</strong>
+                            <br><br>
+                            <button class="btn btn-primary btn-block" (click)="open(content)"> Checkout  </button>
+                        </div> <!-- card-body.// -->
+                    </div> <!-- card.// -->
+                </aside> <!-- col.// -->
+            </div> <!-- row.// -->
+        </div> <!-- container .//  -->
+    </section>
+    
+    <ng-template #content let-modal>
+        <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Your Cart with SimpliGO</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+        <div class="modal-body">
+            <h5>&nbsp;&nbsp;Your order has been placed</h5>
+            <table class="table table-responsive">
+                <tbody>
+                    <tr *ngFor="let item of products; let i = index">
+                            <td><img style="width: 100px;" src="{{item.img}}" alt="" ></td>
+                            <td>{{item.title}}</td>
+                            <td>Quantity:{{item.quantity}}</td>
+                            <td style="width: 12%;">Price:{{item.price*item.quantity}}</td>
+                    </tr>  
+                </tbody>
+            </table>
+            <button routerLink="/electronics" class="btn btn-primary" style="width:35%;height:35px">Shop More</button>
+        </div>
+         
+    </ng-template>
+</ng-container>          
+
+
+<ng-container *ngIf="products.length ==0">
+    <div class="container" style="margin-left:25%;">
+        <div class="center">
+            <img src="https://cdn.dribbble.com/users/5107895/screenshots/14532312/media/a7e6c2e9333d0989e3a54c95dd8321d7.gif" alt="" style="height: 500px;">
+            <h4 style="margin-left:20%">Your cart is empty!</h4>
+            <h6 style="margin-left:20%">Add item to it now</h6>
+            <button routerLink="/electronics" class="btn btn-primary" style="margin-left:23%">Shop Now</button>
+        </div>
+    </div>
+</ng-container>
